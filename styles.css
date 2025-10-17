@@ -1,0 +1,642 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+:root {
+    --primary-gold: #FFD700;
+    --secondary-gold: #FFA000;
+    --dark-bg: #1a237e;
+    --medium-bg: #4a148c;
+    --light-bg: #880e4f;
+    --text-light: #e0e0e0;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+    background: linear-gradient(135deg, var(--dark-bg), var(--medium-bg), var(--light-bg));
+    color: white;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 100%;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Header Section */
+.matra {
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+    text-align: center;
+    margin-bottom: 4px;
+    background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Counter Section */
+.counter-section {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.counter-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-gold);
+    text-align: center;
+    margin: 8px 0;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mantra-display {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    font-weight: bold;
+    text-align: center;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* A | B LAYOUT - Same for both mobile and desktop */
+.main-action-section {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    min-height: 140px;
+    margin-bottom: 20px;
+}
+
+/* A - Controls Side (Left) */
+.controls-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 14px 10px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    min-height: 50px;
+}
+
+.control-btn:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0.98);
+}
+
+/* B - Mala Button Side (Right) */
+.mala-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mala-button {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.mala-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.mala-button i {
+    font-size: 2.8rem;
+    color: #5D4037;
+}
+
+/* Stats Section */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 16px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-gold);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* Install Button */
+.install-btn {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto 0;
+}
+
+.install-btn:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Animations */
+.pulse {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.completion-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--primary-gold);
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    z-index: 1000;
+    animation: fadeInOut 3s ease;
+    text-align: center;
+    max-width: 85%;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    .container {
+        padding: 16px 12px;
+        gap: 12px;
+    }
+
+    .matra {
+        font-size: 0.85rem;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+        margin-bottom: 2px;
+    }
+
+    .header .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .counter-section {
+        padding: 16px;
+        margin-bottom: 15px;
+    }
+
+    .counter-display {
+        font-size: 3rem;
+        min-height: 60px;
+        margin: 4px 0;
+    }
+
+    .mantra-display {
+        font-size: 1.3rem;
+        min-height: 35px;
+        margin: 4px 0;
+    }
+
+    /* A|B Layout Adjustments for Mobile */
+    .main-action-section {
+        gap: 12px;
+        min-height: 130px;
+        margin-bottom: 15px;
+    }
+
+    .controls-side {
+        gap: 10px;
+    }
+
+    .control-btn {
+        padding: 12px 8px;
+        font-size: 0.85rem;
+        min-height: 45px;
+    }
+
+    .mala-button {
+        width: 110px;
+        height: 110px;
+    }
+
+    .mala-button i {
+        font-size: 2.5rem;
+    }
+
+    .stats-container {
+        gap: 10px;
+    }
+
+    .stats {
+        padding: 12px 8px;
+        gap: 6px;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .install-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 12px auto 0;
+    }
+
+    footer {
+        margin-top: 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 24px 20px;
+        gap: 20px;
+    }
+
+    .matra {
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .header .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .counter-display {
+        font-size: 4rem;
+    }
+
+    .mantra-display {
+        font-size: 1.7rem;
+    }
+
+    /* A|B Layout Adjustments for Tablet */
+    .main-action-section {
+        gap: 25px;
+        min-height: 160px;
+    }
+
+    .controls-side {
+        gap: 20px;
+    }
+
+    .control-btn {
+        padding: 16px 12px;
+        font-size: 1rem;
+        min-height: 60px;
+    }
+
+    .mala-button {
+        width: 140px;
+        height: 140px;
+    }
+
+    .mala-button i {
+        font-size: 3.2rem;
+    }
+
+    .stats {
+        padding: 18px 14px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Add hover effects for tablet and desktop */
+    .mala-button {
+        transition: all 0.3s ease;
+    }
+
+    .mala-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .control-btn {
+        transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+    }
+
+    .install-btn {
+        transition: all 0.3s ease;
+    }
+
+    .install-btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    body {
+        padding: 24px;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 30px 25px;
+    }
+
+    .matra {
+        font-size: 1.1rem;
+        padding: 16px;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .counter-section {
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    .counter-display {
+        font-size: 4.5rem;
+    }
+
+    .mantra-display {
+        font-size: 1.9rem;
+    }
+
+    /* A|B Layout Adjustments for Desktop */
+    .main-action-section {
+        gap: 30px;
+        min-height: 180px;
+    }
+
+    .controls-side {
+        gap: 25px;
+    }
+
+    .control-btn {
+        padding: 18px 15px;
+        font-size: 1.1rem;
+        min-height: 65px;
+        border-radius: 15px;
+    }
+
+    .mala-button {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+    }
+
+    .mala-button i {
+        font-size: 3.8rem;
+    }
+
+    .stats {
+        padding: 20px 16px;
+        border-radius: 15px;
+    }
+
+    .stat-value {
+        font-size: 1.7rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .install-btn {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+        border-radius: 15px;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+        padding: 35px 30px;
+    }
+
+    .counter-display {
+        font-size: 5rem;
+    }
+
+    .mantra-display {
+        font-size: 2.1rem;
+    }
+
+    /* A|B Layout Adjustments for Large Desktop */
+    .main-action-section {
+        gap: 35px;
+        min-height: 200px;
+    }
+
+    .mala-button {
+        width: 180px;
+        height: 180px;
+    }
+
+    .mala-button i {
+        font-size: 4.2rem;
+    }
+
+    .control-btn {
+        padding: 20px 18px;
+        font-size: 1.2rem;
+        min-height: 70px;
+    }
+
+    .stats {
+        padding: 22px 18px;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+    }
+}
+
+/* Extra Large Desktop Styles */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1000px;
+        padding: 40px 35px;
+    }
+
+    .counter-display {
+        font-size: 5.5rem;
+    }
+
+    .mala-button {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mala-button i {
+        font-size: 4.8rem;
+    }
+}
