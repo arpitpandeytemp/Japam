@@ -38,7 +38,7 @@
             line-height: 1.5;
         }
 
-        /* Main Container - Mobile First */
+        /* Main Container */
         .container {
             width: 100%;
             max-width: 100%;
@@ -63,6 +63,7 @@
             border: 1px solid rgba(255, 215, 0, 0.2);
             text-align: center;
             line-height: 1.4;
+            margin-bottom: 10px;
         }
 
         .header h1 {
@@ -79,6 +80,7 @@
             font-size: 0.95rem;
             color: var(--text-light);
             text-align: center;
+            margin-bottom: 15px;
         }
 
         /* Counter Section */
@@ -87,6 +89,7 @@
             border-radius: 16px;
             padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
         }
 
         .counter-display {
@@ -112,14 +115,62 @@
             justify-content: center;
         }
 
-        /* Mala Button */
+        /* A | B LAYOUT - Same for both mobile and desktop */
+        .main-action-section {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            min-height: 140px;
+            margin-bottom: 20px;
+        }
+
+        /* A - Controls Side (Left) */
+        .controls-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 14px 10px;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            width: 100%;
+            min-height: 50px;
+        }
+
+        .control-btn:active {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(0.98);
+        }
+
+        /* B - Mala Button Side (Right) */
+        .mala-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .mala-button {
             width: 120px;
             height: 120px;
             background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
             border: none;
             border-radius: 50%;
-            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,38 +189,12 @@
             color: #5D4037;
         }
 
-        /* Controls */
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .control-btn {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 14px;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .control-btn:active {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Stats */
+        /* Stats Section */
         .stats-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            width: 100%;
         }
 
         .stats {
@@ -215,6 +240,9 @@
             justify-content: center;
             gap: 8px;
             transition: all 0.2s ease;
+            width: 100%;
+            max-width: 250px;
+            margin: 15px auto 0;
         }
 
         .install-btn:active {
@@ -264,10 +292,105 @@
             100% { opacity: 0; }
         }
 
+        /* Mobile-specific adjustments */
+        @media (max-width: 767px) {
+            .container {
+                padding: 16px 12px;
+                gap: 12px;
+            }
+
+            .matra {
+                font-size: 0.85rem;
+                padding: 10px;
+                margin-bottom: 8px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+                margin-bottom: 2px;
+            }
+
+            .header .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .counter-section {
+                padding: 16px;
+                margin-bottom: 15px;
+            }
+
+            .counter-display {
+                font-size: 3rem;
+                min-height: 60px;
+                margin: 4px 0;
+            }
+
+            .mantra-display {
+                font-size: 1.3rem;
+                min-height: 35px;
+                margin: 4px 0;
+            }
+
+            /* A|B Layout Adjustments for Mobile */
+            .main-action-section {
+                gap: 12px;
+                min-height: 130px;
+                margin-bottom: 15px;
+            }
+
+            .controls-side {
+                gap: 10px;
+            }
+
+            .control-btn {
+                padding: 12px 8px;
+                font-size: 0.85rem;
+                min-height: 45px;
+            }
+
+            .mala-button {
+                width: 110px;
+                height: 110px;
+            }
+
+            .mala-button i {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                gap: 10px;
+            }
+
+            .stats {
+                padding: 12px 8px;
+                gap: 6px;
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .install-btn {
+                padding: 12px;
+                font-size: 0.9rem;
+                margin: 12px auto 0;
+            }
+
+            footer {
+                margin-top: 12px;
+                font-size: 0.8rem;
+            }
+        }
+
         /* Tablet Styles */
         @media (min-width: 768px) {
             .container {
-                max-width: 500px;
+                max-width: 600px;
                 padding: 24px 20px;
                 gap: 20px;
             }
@@ -293,6 +416,22 @@
                 font-size: 1.7rem;
             }
 
+            /* A|B Layout Adjustments for Tablet */
+            .main-action-section {
+                gap: 25px;
+                min-height: 160px;
+            }
+
+            .controls-side {
+                gap: 20px;
+            }
+
+            .control-btn {
+                padding: 16px 12px;
+                font-size: 1rem;
+                min-height: 60px;
+            }
+
             .mala-button {
                 width: 140px;
                 height: 140px;
@@ -300,15 +439,6 @@
 
             .mala-button i {
                 font-size: 3.2rem;
-            }
-
-            .controls {
-                flex-direction: row;
-                gap: 12px;
-            }
-
-            .control-btn {
-                padding: 12px 16px;
             }
 
             .stats {
@@ -322,19 +452,8 @@
             .stat-label {
                 font-size: 0.85rem;
             }
-        }
 
-        /* Desktop Styles */
-        @media (min-width: 1024px) {
-            body {
-                padding: 24px;
-            }
-
-            .container {
-                max-width: 450px;
-                padding: 28px 24px;
-            }
-
+            /* Add hover effects for tablet and desktop */
             .mala-button {
                 transition: all 0.3s ease;
             }
@@ -342,10 +461,6 @@
             .mala-button:hover {
                 transform: scale(1.05);
                 box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-            }
-
-            .mala-button:active {
-                transform: scale(0.95);
             }
 
             .control-btn {
@@ -366,136 +481,140 @@
             }
         }
 
-        /* Large Desktop Styles - 1000px+ with 800px width */
-        @media (min-width: 1000px) {
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            body {
+                padding: 24px;
+            }
+
             .container {
                 max-width: 800px;
-                padding: 35px 40px;
-                gap: 25px;
+                padding: 30px 25px;
             }
 
-            /* New Layout for Large Screens */
-            .app-layout {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-                align-items: center;
-            }
-
-            .left-section {
-                display: flex;
-                flex-direction: column;
-                gap: 25px;
-            }
-
-            .right-section {
-                display: flex;
-                flex-direction: column;
-                gap: 25px;
-            }
-
-            /* Header adjustments */
             .matra {
                 font-size: 1.1rem;
                 padding: 16px;
-                grid-column: 1 / -1;
-            }
-
-            .header {
-                grid-column: 1 / -1;
-                text-align: center;
             }
 
             .header h1 {
-                font-size: 2.8rem;
-                margin-bottom: 8px;
+                font-size: 2.5rem;
             }
 
             .header .subtitle {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
-            /* Counter section adjustments */
             .counter-section {
-                padding: 30px;
-                border-radius: 20px;
+                padding: 25px;
+                border-radius: 18px;
+            }
+
+            .counter-display {
+                font-size: 4.5rem;
+            }
+
+            .mantra-display {
+                font-size: 1.9rem;
+            }
+
+            /* A|B Layout Adjustments for Desktop */
+            .main-action-section {
+                gap: 30px;
+                min-height: 180px;
+            }
+
+            .controls-side {
+                gap: 25px;
+            }
+
+            .control-btn {
+                padding: 18px 15px;
+                font-size: 1.1rem;
+                min-height: 65px;
+                border-radius: 15px;
+            }
+
+            .mala-button {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+            }
+
+            .mala-button i {
+                font-size: 3.8rem;
+            }
+
+            .stats {
+                padding: 20px 16px;
+                border-radius: 15px;
+            }
+
+            .stat-value {
+                font-size: 1.7rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .install-btn {
+                padding: 16px 20px;
+                font-size: 1.1rem;
+                border-radius: 15px;
+            }
+        }
+
+        /* Large Desktop Styles */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 900px;
+                padding: 35px 30px;
             }
 
             .counter-display {
                 font-size: 5rem;
-                min-height: 100px;
             }
 
             .mantra-display {
-                font-size: 2.2rem;
-                min-height: 50px;
+                font-size: 2.1rem;
             }
 
-            /* Mala button adjustments */
+            /* A|B Layout Adjustments for Large Desktop */
+            .main-action-section {
+                gap: 35px;
+                min-height: 200px;
+            }
+
             .mala-button {
                 width: 180px;
                 height: 180px;
-                margin: 0 auto;
             }
 
             .mala-button i {
-                font-size: 4.5rem;
-            }
-
-            /* Controls adjustments */
-            .controls {
-                flex-direction: row;
-                justify-content: center;
-                gap: 20px;
+                font-size: 4.2rem;
             }
 
             .control-btn {
-                padding: 16px 24px;
-                font-size: 1.1rem;
-                min-width: 150px;
-            }
-
-            /* Stats adjustments */
-            .stats-container {
-                gap: 20px;
+                padding: 20px 18px;
+                font-size: 1.2rem;
+                min-height: 70px;
             }
 
             .stats {
                 padding: 22px 18px;
-                border-radius: 16px;
-                gap: 12px;
             }
 
             .stat-value {
                 font-size: 1.8rem;
-            }
-
-            .stat-label {
-                font-size: 0.95rem;
-            }
-
-            /* Install button adjustments */
-            .install-btn {
-                padding: 16px 24px;
-                font-size: 1.1rem;
-                grid-column: 1 / -1;
-                justify-self: center;
-                min-width: 250px;
-            }
-
-            /* Footer adjustments */
-            footer {
-                font-size: 1rem;
-                margin-top: 25px;
-                grid-column: 1 / -1;
             }
         }
 
         /* Extra Large Desktop Styles */
         @media (min-width: 1400px) {
             .container {
-                max-width: 850px;
-                padding: 40px 45px;
+                max-width: 1000px;
+                padding: 40px 35px;
             }
 
             .counter-display {
@@ -508,7 +627,7 @@
             }
 
             .mala-button i {
-                font-size: 5rem;
+                font-size: 4.8rem;
             }
         }
     </style>
@@ -525,68 +644,64 @@
             <h1>राधे राधे माला जप</h1>
             <p class="subtitle">श्री कृष्ण की भक्ति के लिए आपका डिजिटल माला</p>
         </div>
-
-        <!-- Main Content Layout for Large Screens -->
-        <div class="app-layout">
-            <!-- Left Section -->
-            <div class="left-section">
-                <!-- Counter Section -->
-                <div class="counter-section">
-                    <div class="counter-display" id="counter">0</div>
-                    <div class="mantra-display" id="mantraDisplay">राधे राधे</div>
-                </div>
-                
-                <!-- Mala Button -->
+        
+        <!-- Counter Section -->
+        <div class="counter-section">
+            <div class="counter-display" id="counter">0</div>
+            <div class="mantra-display" id="mantraDisplay">राधे राधे</div>
+        </div>
+        
+        <!-- A | B LAYOUT -->
+        <div class="main-action-section">
+            <!-- A - Controls Side (Left) -->
+            <div class="controls-side">
+                <button class="control-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> रीसेट
+                </button>
+                <button class="control-btn" id="soundToggle">
+                    <i class="fas fa-volume-up"></i> ध्वनि
+                </button>
+            </div>
+            
+            <!-- B - Mala Button Side (Right) -->
+            <div class="mala-side">
                 <button class="mala-button" id="japButton">
                     <i class="fas fa-praying-hands"></i>
                 </button>
             </div>
-
-            <!-- Right Section -->
-            <div class="right-section">
-                <!-- Controls -->
-                <div class="controls">
-                    <button class="control-btn" id="resetBtn">
-                        <i class="fas fa-redo"></i> रीसेट
-                    </button>
-                    <button class="control-btn" id="soundToggle">
-                        <i class="fas fa-volume-up"></i> ध्वनि
-                    </button>
+        </div>
+        
+        <!-- Stats Container -->
+        <div class="stats-container">
+            <!-- Daily/Weekly/Total Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="todayCount">0</span>
+                    <span class="stat-label">आज</span>
                 </div>
-                
-                <!-- Stats Container -->
-                <div class="stats-container">
-                    <!-- Daily/Weekly/Total Stats -->
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-value" id="todayCount">0</span>
-                            <span class="stat-label">आज</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="weekCount">0</span>
-                            <span class="stat-label">इस सप्ताह</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="totalCount">0</span>
-                            <span class="stat-label">कुल</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Mala Stats -->
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-value" id="malaCount">0</span>
-                            <span class="stat-label">माला</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="todayMalaCount">0</span>
-                            <span class="stat-label">आज की माला</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="weekMalaCount">0</span>
-                            <span class="stat-label">सप्ताह की माला</span>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="weekCount">0</span>
+                    <span class="stat-label">इस सप्ताह</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="totalCount">0</span>
+                    <span class="stat-label">कुल</span>
+                </div>
+            </div>
+            
+            <!-- Mala Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="malaCount">0</span>
+                    <span class="stat-label">माला</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="todayMalaCount">0</span>
+                    <span class="stat-label">आज की माला</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="weekMalaCount">0</span>
+                    <span class="stat-label">सप्ताह की माला</span>
                 </div>
             </div>
         </div>
