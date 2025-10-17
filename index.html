@@ -366,10 +366,149 @@
             }
         }
 
-        /* Large Desktop Styles */
-        @media (min-width: 1200px) {
+        /* Large Desktop Styles - 1000px+ with 800px width */
+        @media (min-width: 1000px) {
             .container {
-                max-width: 500px;
+                max-width: 800px;
+                padding: 35px 40px;
+                gap: 25px;
+            }
+
+            /* New Layout for Large Screens */
+            .app-layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .left-section {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .right-section {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            /* Header adjustments */
+            .matra {
+                font-size: 1.1rem;
+                padding: 16px;
+                grid-column: 1 / -1;
+            }
+
+            .header {
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 2.8rem;
+                margin-bottom: 8px;
+            }
+
+            .header .subtitle {
+                font-size: 1.3rem;
+            }
+
+            /* Counter section adjustments */
+            .counter-section {
+                padding: 30px;
+                border-radius: 20px;
+            }
+
+            .counter-display {
+                font-size: 5rem;
+                min-height: 100px;
+            }
+
+            .mantra-display {
+                font-size: 2.2rem;
+                min-height: 50px;
+            }
+
+            /* Mala button adjustments */
+            .mala-button {
+                width: 180px;
+                height: 180px;
+                margin: 0 auto;
+            }
+
+            .mala-button i {
+                font-size: 4.5rem;
+            }
+
+            /* Controls adjustments */
+            .controls {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .control-btn {
+                padding: 16px 24px;
+                font-size: 1.1rem;
+                min-width: 150px;
+            }
+
+            /* Stats adjustments */
+            .stats-container {
+                gap: 20px;
+            }
+
+            .stats {
+                padding: 22px 18px;
+                border-radius: 16px;
+                gap: 12px;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.95rem;
+            }
+
+            /* Install button adjustments */
+            .install-btn {
+                padding: 16px 24px;
+                font-size: 1.1rem;
+                grid-column: 1 / -1;
+                justify-self: center;
+                min-width: 250px;
+            }
+
+            /* Footer adjustments */
+            footer {
+                font-size: 1rem;
+                margin-top: 25px;
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Extra Large Desktop Styles */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 850px;
+                padding: 40px 45px;
+            }
+
+            .counter-display {
+                font-size: 5.5rem;
+            }
+
+            .mala-button {
+                width: 200px;
+                height: 200px;
+            }
+
+            .mala-button i {
+                font-size: 5rem;
             }
         }
     </style>
@@ -386,59 +525,68 @@
             <h1>राधे राधे माला जप</h1>
             <p class="subtitle">श्री कृष्ण की भक्ति के लिए आपका डिजिटल माला</p>
         </div>
-        
-        <!-- Counter Section -->
-        <div class="counter-section">
-            <div class="counter-display" id="counter">0</div>
-            <div class="mantra-display" id="mantraDisplay">राधे राधे</div>
-        </div>
-        
-        <!-- Mala Button -->
-        <button class="mala-button" id="japButton">
-            <i class="fas fa-praying-hands"></i>
-        </button>
-        
-        <!-- Controls -->
-        <div class="controls">
-            <button class="control-btn" id="resetBtn">
-                <i class="fas fa-redo"></i> रीसेट
-            </button>
-            <button class="control-btn" id="soundToggle">
-                <i class="fas fa-volume-up"></i> ध्वनि
-            </button>
-        </div>
-        
-        <!-- Stats Container -->
-        <div class="stats-container">
-            <!-- Daily/Weekly/Total Stats -->
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-value" id="todayCount">0</span>
-                    <span class="stat-label">आज</span>
+
+        <!-- Main Content Layout for Large Screens -->
+        <div class="app-layout">
+            <!-- Left Section -->
+            <div class="left-section">
+                <!-- Counter Section -->
+                <div class="counter-section">
+                    <div class="counter-display" id="counter">0</div>
+                    <div class="mantra-display" id="mantraDisplay">राधे राधे</div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="weekCount">0</span>
-                    <span class="stat-label">इस सप्ताह</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="totalCount">0</span>
-                    <span class="stat-label">कुल</span>
-                </div>
+                
+                <!-- Mala Button -->
+                <button class="mala-button" id="japButton">
+                    <i class="fas fa-praying-hands"></i>
+                </button>
             </div>
-            
-            <!-- Mala Stats -->
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-value" id="malaCount">0</span>
-                    <span class="stat-label">माला</span>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="control-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i> रीसेट
+                    </button>
+                    <button class="control-btn" id="soundToggle">
+                        <i class="fas fa-volume-up"></i> ध्वनि
+                    </button>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="todayMalaCount">0</span>
-                    <span class="stat-label">आज की माला</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="weekMalaCount">0</span>
-                    <span class="stat-label">सप्ताह की माला</span>
+                
+                <!-- Stats Container -->
+                <div class="stats-container">
+                    <!-- Daily/Weekly/Total Stats -->
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="todayCount">0</span>
+                            <span class="stat-label">आज</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="weekCount">0</span>
+                            <span class="stat-label">इस सप्ताह</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalCount">0</span>
+                            <span class="stat-label">कुल</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Mala Stats -->
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="malaCount">0</span>
+                            <span class="stat-label">माला</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="todayMalaCount">0</span>
+                            <span class="stat-label">आज की माला</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="weekMalaCount">0</span>
+                            <span class="stat-label">सप्ताह की माला</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
